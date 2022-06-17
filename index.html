@@ -55,7 +55,13 @@
         li.append(span);
         output.append(li);
         input.value = "";
-
+        input.placeholder = "Task Created...";
+        this.textContent = "Adding...";
+        setTimeout(() => {
+          this.textContent = "Add";
+          input.placeholder = "Create New Task";
+        }, 600);
+        span.style.cursor = "pointer";
         span.addEventListener("click", function (e) {
           e.target.parentElement.remove();
         });
